@@ -1,3 +1,6 @@
+# Any kind of secure information
+**/_secrets.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
