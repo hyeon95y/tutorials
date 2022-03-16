@@ -1,5 +1,7 @@
 # Any kind of raw data
 **/*.csv
+**/*.sqlite
+**/*.db
 
 # Any kind of secure information
 **/_secrets.py
