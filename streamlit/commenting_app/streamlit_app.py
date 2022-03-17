@@ -3,10 +3,10 @@
 
 from datetime import datetime
 
-import streamlit as st
+from utils import chart, db
 from vega_datasets import data
 
-from utils import chart, db
+import streamlit as st
 
 COMMENT_TEMPLATE_MD = """{} - {}
 > {}"""
@@ -18,7 +18,8 @@ def space(num_lines=1):
         st.write("")
 
 
-st.set_page_config(layout="centered", page_icon="💬", page_title="Commenting app")
+st.set_page_config(layout="centered", page_icon="💬",
+                   page_title="Commenting app")
 
 # Data visualisation part
 
@@ -26,7 +27,8 @@ st.title("💬 Commenting app")
 
 source = data.stocks()
 all_symbols = source.symbol.unique()
-symbols = st.multiselect("Choose stocks to visualize", all_symbols, all_symbols[:3])
+symbols = st.multiselect("Choose stocks to visualize",
+                         all_symbols, all_symbols[:3])
 
 space(1)
 
@@ -48,7 +50,8 @@ with st.expander("💬 Open comments"):
     st.write("**Comments:**")
 
     for index, entry in enumerate(comments.itertuples()):
-        st.markdown(COMMENT_TEMPLATE_MD.format(entry.name, entry.date, entry.comment))
+        st.markdown(COMMENT_TEMPLATE_MD.format(
+            entry.name, entry.date, entry.comment))
 
         is_last = index == len(comments) - 1
         is_new = "just_posted" in st.session_state and is_last

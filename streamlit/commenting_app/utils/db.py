@@ -3,10 +3,11 @@ import socket
 import google_auth_httplib2
 import httplib2
 import pandas as pd
-import streamlit as st
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import HttpRequest
+
+import streamlit as st
 
 socket.setdefaulttimeout(15 * 60)
 
@@ -27,13 +28,11 @@ def connect():
     # Create a new Http() object for every request
     def build_request(http, *args, **kwargs):
         new_http = google_auth_httplib2.AuthorizedHttp(
-            credentials, http=httplib2.Http()
-        )
+            credentials, http=httplib2.Http())
         return HttpRequest(new_http, *args, **kwargs)
 
     authorized_http = google_auth_httplib2.AuthorizedHttp(
-        credentials, http=httplib2.Http()
-    )
+        credentials, http=httplib2.Http())
     service = build(
         "sheets",
         "v4",
