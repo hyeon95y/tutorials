@@ -1,7 +1,9 @@
-# Any kind of raw data
+# Any kind of data
 **/*.csv
+**/*.parquet
+**/*.xlsx
 
-# Any kind of secure information
+# ANy kind of secure information
 **/_secrets.py
 
 # Byte-compiled / optimized / DLL files
