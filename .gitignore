@@ -1,7 +1,14 @@
 # Any kind of data
 **/*.csv
+<<<<<<< HEAD
 **/*.parquet
 **/*.xlsx
+=======
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/*.db3
+>>>>>>> 19f18d162d05abad976e2bba5031247478f0280c
 
 # ANy kind of secure information
 **/_secrets.py
