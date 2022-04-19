@@ -6,6 +6,7 @@
 **/*.sqlite3
 **/*.db
 **/*.db3
+**/*.json
 
 # ANy kind of secure information
 **/_secrets.py
